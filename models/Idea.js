@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Create Schema
-const IdeaSchema = new Schema({
-  title:{
+const Player = new Schema({
+  player:{
     type: String,
     required: true
   },
-  details:{
+  games:{
     type: String,
     required: true
   },
@@ -17,4 +17,4 @@ const IdeaSchema = new Schema({
   }
 });
 
-mongoose.model('ideas', IdeaSchema);
+mongoose.model('players', Player);
