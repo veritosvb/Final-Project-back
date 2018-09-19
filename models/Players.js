@@ -9,17 +9,11 @@ const Players = new Schema({
     type: String,
     required: true
   },
-  prefgames: {
-    type: Map,
-    of: String
-  },
   twitch:String,
   steam:String,
-  teams: {
-    type: Map,
-    of: String
-  },
-  score:Number
+  score:Number,
+  about:String,
+  url:String
 });
 
 mongoose.model('Players', Players);

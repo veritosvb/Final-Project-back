@@ -1,11 +1,18 @@
 const db = require("../models");
 
-// Defining methods for the PlayerssController
+// Defining methods for the articlesController
 module.exports = {
-  findAll: function(req, res) {
+  find: function(req, res) {
+    console.log("here in find")
     db.Players
       .find(req.query)
-      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findYear: function(req, res) {
+    db.Players
+      .find({year: { $range: [ req.body.start,req.body.end, 1 ] } })
+      .sort({ year: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -15,26 +22,21 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findOne: function(req, res) {
-    db.Players
-      .findById({ email: req.params.email })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
   create: function(req, res) {
-    db.Players
+    console.log("hello saving article");
+    db.Article
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Players
+    db.Article
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.Players
+    db.Article
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
