@@ -2,18 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Players = new Schema({
-  username:{
-    type: String,
-  },
-  email:{
-    type: String,
-    required: true
-  },
-  twitch:String,
-  steam:String,
-  score:Number,
-  about:String,
-  url:String
+  email: { type: String, required: true },
+  username: { type: String },
+  about: { type: String},
+  twitch: { type: String },
+  steam: { type: String },
+  url: String,
+  score: Number
 });
 
-mongoose.model('Players', Players);
+const Player = mongoose.model('Players', Players);
+
+module.exports = Player;

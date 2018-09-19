@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the articlesController
+// Defining methods for the playersController
 module.exports = {
   find: function(req, res) {
     console.log("here in find")
