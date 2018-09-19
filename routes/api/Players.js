@@ -1,20 +1,27 @@
 const router = require("express").Router();
 const playersController = require("../../controllers/playerController");
 
-// Matches with "/api/players"
-router.route("/")
-  .get(playersController.findAllPlayers)
-  .post(playersController.create);
+// Matches with "/api/createUser"
+router.route("/createUser")
+  .post(playersController.createUser);
 
-// Matches with "/api/players/:email"  
-router.route("/:email")
+// Matches with "/api/email/:email"  
+router.route("/email/:email")
   .get(playersController.findbyEmail)
 
-// Matches with "/api/players/:id"
-router
-  .route("/somethin/:id")
+// Matches with "/api/player/:id"
+router.route("/player/:id")
   .get(playersController.findById)
-  .put(playersController.update)
-  .delete(playersController.remove);
+
+// Matches with "/api/players"
+router.route("/players")
+  .get(playersController.findAllPlayers)
+
+router.route("/games")
+  .get(playersController.findAllGames)
+
+// Matches with "/api/players"
+router.route("/favGame/:userId")
+  .post(playersController.createFavGame)
 
 module.exports = router;

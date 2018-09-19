@@ -5,57 +5,77 @@ module.exports = {
   findbyEmail: function(req, res) {
     console.log("here in find by email " + req.params.email)
     db.Players
-      .find({email: req.params.email })
+      .find({email: req.params.email})
       .then(dbModel => {
         console.log("Database  " + dbModel[0]._id);
+        return res.json(dbModel[0]._id);
+        
+      })
+      .catch(err => res.status(422).json(err));
+  },
+  findById: function(req, res) {
+    console.log("here in find by id " + req.params.id)
+    db.Players
+      .find({_id: req.params.id})
+      .then(dbModel => {
+        console.log("Database  " + dbModel);
         return res.json(dbModel);
         
       })
       .catch(err => res.status(422).json(err));
   },
   findAllPlayers: function(req, res) {
-    console.log("here in find by email" + req.body)
     db.Players
       .find()
       .then(dbModel => {
         res.json(dbModel)
-        console.log("Found" + dbMode._id);
-
-      }
-        )
+      })
       .catch(err => res.status(422).json(err));
   },
-  findYear: function(req, res) {
+  findAllGames: function(req, res) {
+    db.Games
+      .find()
+      .then(dbModel => {
+        res.json(dbModel)
+      })
+      .catch(err => res.status(422).json(err));
+  },
+  createUser: function(req, res) {
+    console.log("hello creating user");
     db.Players
-      .find({year: { $range: [ req.body.start,req.body.end, 1 ] } })
-      .sort({ year: -1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  findById: function(req, res) {
-    db.Players
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  create: function(req, res) {
-    console.log("hello saving article");
-    db.Article
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
-    db.Article
+  updateUser: function(req, res) {
+    db.Players
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
-    db.Article
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
+  removeUser: function(req, res) {
+//userid + gamename
+     
+  },
+  updateGame: function(req, res) {
+
+
+  },
+  deleteUserGame: function(req, res) {
+ //userid + gamename
+  },
+  createFavGame: function(req, res) {
+    //userid + gamename
+    db.Games
+    .find(req.params.game)
+    .then(dbModel => {
+      db.favGames
+      .create(req.body.userid,dbModel[0]._id)
+      .then(resp => res.json(resp))
       .catch(err => res.status(422).json(err));
-  }
+    
+    })
+    .catch(err => res.status(422).json(err));
+     }
+
 };

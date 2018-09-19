@@ -2,6 +2,6 @@ const router = require("express").Router();
 const playersRoutes = require("./Players");
 
 // Book routes
-router.use("/Players", playersRoutes);
+router.use("/", playersRoutes);
 
 module.exports = router;
