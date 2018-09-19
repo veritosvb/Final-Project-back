@@ -3,9 +3,9 @@ const db = require("../models");
 // Defining methods for the playersController
 module.exports = {
   find: function(req, res) {
-    console.log("here in find")
+    console.log("here in find by email"+ req.body)
     db.Players
-      .find(req.query)
+      .find()
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
