@@ -1,15 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Players = new Schema({
-  usedid: { type: String },
-  favid: { type: String},
-  twitch: { type: String },
-  steam: { type: String },
-  url: String,
-  score: Number
+const favGame = new Schema({
+  username: { type: String },
+  favorite: { type: String}
 });
 
-const Player = mongoose.model('Players', Players);
+const favGames = mongoose.model('favGames', favGame);
 
-module.exports = Player;
+module.exports = favGames;

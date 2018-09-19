@@ -2,11 +2,27 @@ const db = require("../models");
 
 // Defining methods for the playersController
 module.exports = {
-  find: function(req, res) {
-    console.log("here in find by email"+ req.body)
+  findbyEmail: function(req, res) {
+    console.log("here in find by email " + req.params.email)
+    db.Players
+      .find({email: req.params.email })
+      .then(dbModel => {
+        console.log("Database  " + dbModel[0]._id);
+        return res.json(dbModel);
+        
+      })
+      .catch(err => res.status(422).json(err));
+  },
+  findAllPlayers: function(req, res) {
+    console.log("here in find by email" + req.body)
     db.Players
       .find()
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => {
+        res.json(dbModel)
+        console.log("Found" + dbMode._id);
+
+      }
+        )
       .catch(err => res.status(422).json(err));
   },
   findYear: function(req, res) {
