@@ -1,6 +1,5 @@
 const db = require("../models");
 
-
 // Defining methods for the playersController
 module.exports = {
   findbyEmail: function(req, res) {
