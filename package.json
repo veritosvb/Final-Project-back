@@ -15,7 +15,7 @@
     "start:prod": "node server.js",
     "start:dev": "node server.js",
     "seed": "node scripts/seedDB.js",
-    "install": "yarn install",
+    "install": "npm install",
     "build": "npm run build",
     "heroku-postbuild": "npm run build"
   },

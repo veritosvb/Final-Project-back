@@ -7,8 +7,8 @@ module.exports = {
     db.Players
       .find({email: req.params.email})
       .then(dbModel => {
-        console.log("Database  " + dbModel[0]._id);
-        return res.json(dbModel[0]._id);
+        console.log("Database  " + dbModel[0]);
+        return res.json(dbModel[0]);
         
       })
       .catch(err => res.status(422).json(err));
@@ -18,7 +18,6 @@ module.exports = {
     db.Players
       .find({_id: req.params.id})
       .then(dbModel => {
-        console.log("Database  " + dbModel);
         return res.json(dbModel);
         
       })
@@ -37,6 +36,7 @@ module.exports = {
       .find()
       .then(dbModel => {
         res.json(dbModel)
+        console.log(dbModel)
       })
       .catch(err => res.status(422).json(err));
   },

@@ -21,7 +21,7 @@ router.route("/games")
   .get(playersController.findAllGames)
 
 // Matches with "/api/players"
-router.route("/favGame/:userId")
+router.route("/favGame")
   .post(playersController.createFavGame)
 
 module.exports = router;
