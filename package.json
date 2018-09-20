@@ -2,6 +2,7 @@
   "name": "final-project-back",
   "version": "1.0.0",
   "description": "[Link to the frontend](https://github.com/sdevmandujano/Final-Project)",
+  "main": "server.js",
   "engines": {
     "node": "8.11.3"
   },
@@ -10,7 +11,7 @@
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "mongoose": "^5.2.16"
+    "mongoose": "^5.2.15"
   },
   "devDependencies": {},
   "scripts": {
@@ -20,6 +21,14 @@
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veritosvb/Final-Project-back.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veritosvb/Final-Project-back/issues"
+  },
+  "homepage": "https://github.com/veritosvb/Final-Project-back#readme"
 }
