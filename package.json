@@ -19,7 +19,7 @@
     "start": "node server.js",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
+    "client": "cd client/build && npm run start",
     "seed": "node scripts/seedDB.js"
   },
   "repository": {
