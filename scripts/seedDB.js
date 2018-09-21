@@ -16,7 +16,8 @@ const userSeed = [
     steam:"ejimeneztwich",
     score:5,
     about:"Candy Crushhhhhh",
-    url:"www.google.com" 
+    url:"https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/female/7.png", 
+    about:"Excelente Jugadora. la mejor"
   },
   {
     username: "Veronica Velez",
@@ -25,7 +26,8 @@ const userSeed = [
     steam:"steamuser",
     score:5,
     about:"Candy Crushhhhhh",
-    url:"www.google.com" 
+    url:"https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/female/10.png", 
+    about:"Excelente Jugadora. la mejor"
   }
 ];
 

@@ -20,7 +20,7 @@ router.route("/players")
 router.route("/games")
   .get(playersController.findAllGames)
 
-// Matches with "/api/players"
+// Matches with "/favGame"
 router.route("/favGame")
   .post(playersController.createFavGame)
 

@@ -36,7 +36,6 @@ module.exports = {
       .find()
       .then(dbModel => {
         res.json(dbModel)
-        console.log(dbModel)
       })
       .catch(err => res.status(422).json(err));
   },
@@ -65,17 +64,13 @@ module.exports = {
  //userid + gamename
   },
   createFavGame: function(req, res) {
-    //userid + gamename
-    db.Games
-    .find(req.params.game)
+    console.log("creating favorite")
+    db.favGames
+    .create(req.body)
     .then(dbModel => {
-      db.favGames
-      .create(req.body.userid,dbModel[0]._id)
-      .then(resp => res.json(resp))
-      .catch(err => res.status(422).json(err));
-    
+      res.json(dbModel);
+      console.log(dbModel);
     })
     .catch(err => res.status(422).json(err));
-     }
-
+  }
 };
