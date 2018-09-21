@@ -7,7 +7,6 @@ module.exports = {
     db.Players
       .find({email: req.params.email})
       .then(dbModel => {
-        console.log("Database  " + dbModel[0]);
         return res.json(dbModel[0]);
         
       })
@@ -52,16 +51,30 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  removeUser: function(req, res) {
+  findUserFavorites: function(req, res) {
 //userid + gamename
+    console.log("finding favorite" + req.params.id)
+    db.favGames
+    .find({username: req.params.id})
+    .then(dbModel => {
+      return res.json(dbModel);
+    })
+    .catch(err => res.status(422).json(err));
      
   },
   updateGame: function(req, res) {
 
 
   },
-  deleteUserGame: function(req, res) {
- //userid + gamename
+  deleteUserFavorites: function(req, res) {
+    console.log("delete favorite")
+    db.favGames
+    .remove({_id: req.params.id})
+    .then(dbModel => {
+      res.json(dbModel);
+      console.log(dbModel);
+    })
+    .catch(err => res.status(422).json(err));
   },
   createFavGame: function(req, res) {
     console.log("creating favorite")
@@ -69,7 +82,7 @@ module.exports = {
     .create(req.body)
     .then(dbModel => {
       res.json(dbModel);
-      console.log(dbModel);
+
     })
     .catch(err => res.status(422).json(err));
   }

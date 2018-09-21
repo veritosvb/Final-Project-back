@@ -24,4 +24,8 @@ router.route("/games")
 router.route("/favGame")
   .post(playersController.createFavGame)
 
+router.route("/favUserGames/:id")
+  .get(playersController.findUserFavorites)
+  .delete(playersController.deleteUserFavorites)
+
 module.exports = router;
