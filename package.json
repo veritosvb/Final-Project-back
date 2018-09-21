@@ -1,6 +1,6 @@
 {
   "name": "final-project-back",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "[Link to the frontend](https://github.com/sdevmandujano/Final-Project)",
   "main": "server.js",
