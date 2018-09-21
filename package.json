@@ -15,6 +15,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "prestart": "next build",
     "start": "node server.js",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
