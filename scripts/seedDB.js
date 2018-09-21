@@ -30,7 +30,7 @@ const userSeed = [
 ];
 
 const gameSeed = [
-  { name: "Street Fighter", category:	 "Fighting games"},
+  { name: "Street Fighter", category:	 "Fighting games", idTwitch: ""},
   { name:"Super Smash Bros", category:"Fighting games"},
   { name: "Marvel vs", category:	 "Fighting games"},
   { name: "Killer Instinct",category:	 "Fighting games"},
