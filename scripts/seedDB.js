@@ -30,13 +30,17 @@ const userSeed = [
 ];
 
 const gameSeed = [
-  { name: "Street Fighter", category:	 "Fighting games", idTwitch: ""},
-  { name:"Super Smash Bros", category:"Fighting games"},
-  { name: "Marvel vs", category:	 "Fighting games"},
+  { name: "Street Fighter 5", category:	 "Fighting games", idTwitch: ""},
+  { name:"World of Warcraft", category:"MMO", idTwitch: "59498"},
+  { name:"GTA V", category:"Open World", idTwitch: "32982"},
+  { name:"Destiny 2", category:"First-person-shooters", idTwitch: "497057" },
+  { name:"FIFA 19", category: "Sports", idTwitch:"506103"},
+  { name:"PLAYERUNKNOWN'S BATTLEGROUND", category:"First-person-shooters", idTwitch: "59498" },
+  { name: "Marvel vs Capcom", category:	 "Fighting games"},
   { name: "Killer Instinct",category:	 "Fighting games"},
   { name: "Doom", category: "First-person shooters"},
   { name: "Quake", category: "First-person shooters"},
-  { name: "Counter-Strike series", category: "First-person shooters"},
+  { name: "Counter-Strike GO", category: "First-person shooters",  idTwitch: "32399"},
   { name: "Call of Duty series", category: "First-person shooters"},
   { name: "Unreal Tournament", category: "First-person shooters"},
   { name: "Halo series", category: "First-person shooters"},
@@ -60,8 +64,8 @@ const gameSeed = [
   { name: "iRacing", category: "Racing" },
   { name: "Project CARS", category: "Racing" },
   { name: "Trackmania", category: "Racing" },
-  { name: "Dota 2", category: "Multiplayer online battle arena" },
-  { name: "League of Legends", category: "Multiplayer online battle arena" },
+  { name: "Dota 2", category: "Multiplayer online battle arena" ,  idTwitch: "29595" },
+  { name: "League of Legends", category: "Multiplayer online battle arena" ,  idTwitch: "21779" },
   { name: "Heroes of the Storm", category: "Multiplayer online battle arena" },
   { name: "Heroes of Newerth", category: "Multiplayer online battle arena" },
   { name: "Smite", category: "Multiplayer online battle arena" },
@@ -77,7 +81,7 @@ const gameSeed = [
   { name: "Puyo Puyo",category:"others"},
   { name: "Tetris",category:"others"},
   { name: "Splatoon",category:"others"},
-  { name: "Fortnite",category:"Multiplayer online battle arena"},
+  { name: "Fortnite",category:"Multiplayer online battle arena" ,  idTwitch: "33214"},
 ];
 
 const favGamesSeed = [
