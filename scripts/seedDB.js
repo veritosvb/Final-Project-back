@@ -17,7 +17,8 @@ const userSeed = [
     score:5,
     about:"Candy Crushhhhhh",
     url:"https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/female/7.png", 
-    about:"Excelente Jugadora. la mejor"
+    about:"Excelente Jugadora. la mejor",
+    comment:"Veronicas comments "
   },
   {
     username: "Veronica Velez",
