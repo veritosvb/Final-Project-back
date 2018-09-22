@@ -8,7 +8,8 @@ const Players = new Schema({
   twitch: { type: String },
   steam: { type: String },
   url: String,
-  score: Number
+  score: Number,
+  comments: Array
 });
 
 const Player = mongoose.model('Players', Players);

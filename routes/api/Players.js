@@ -12,6 +12,7 @@ router.route("/email/:email")
 // Matches with "/api/player/:id"
 router.route("/player/:id")
   .get(playersController.findById)
+  .put(playersController.updateUser)
 
 // Matches with "/api/players"
 router.route("/players")
@@ -27,5 +28,6 @@ router.route("/favGame")
 router.route("/favUserGames/:id")
   .get(playersController.findUserFavorites)
   .delete(playersController.deleteUserFavorites)
+
 
 module.exports = router;
